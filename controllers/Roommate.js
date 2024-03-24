@@ -58,7 +58,8 @@ const deleteRoommate = async (req, res) => {
 };
 const gettingAllRoommate = async (req, res) => {
   try {
-    const allRoommate = RoomMate.find({});
+    const allRoommate = await RoomMate.find({});
+    //console.log(allRoommate)
     res.status(200).json({ allRoommate });
   } catch (error) {
     res.status(500).json({ msg: error.message });
